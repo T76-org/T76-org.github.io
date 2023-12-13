@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on T76.org</title>
-    <link>https://t76-org.github.io/tags/</link>
+    <link>https://t76.org/tags/</link>
     <description>Recent content in Tags on T76.org</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>MTA 2020-2023</copyright><atom:link href="https://t76-org.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>MTA 2020-2023</copyright><atom:link href="https://t76.org/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
