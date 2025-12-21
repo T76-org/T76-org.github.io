@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connecting to ArbiBikeKM...</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            margin: 0;
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .card {
+            max-width: 420px;
+            background: #1e293b;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+            text-align: center;
+        }
+        h1 {
+            margin-top: 0;
+            font-size: 20px;
+        }
+        .spinner {
+            border: 4px solid #334155;
+            border-top: 4px solid #22c55e;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .error {
+            background: #dc2626;
+            color: #fff;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 12px 0;
+            display: none;
+        }
+        .success {
+            background: #16a34a;
+            color: #fff;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 12px 0;
+            display: none;
+        }
+        code {
+            background: #0b1222;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            word-break: break-all;
+        }
+        .muted {
+            color: #94a3b8;
+            font-size: 13px;
+            margin-top: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Connecting to ArbiBikeKM...</h1>
+        <div class="spinner"></div>
+        <p class="muted">Redirecting you to your device...</p>
+        <div class="error" id="error"></div>
+        <div class="success" id="success"></div>
+    </div>
+
+    <script>
+        // Extract URL parameters
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Get the authorization code and state from Strava
+        const code = getQueryParam('code');
+        const state = getQueryParam('state');
+        const error = getQueryParam('error');
+        const errorDescription = getQueryParam('error_description');
+
+        const errorDiv = document.getElementById('error');
+        const successDiv = document.getElementById('success');
+
+        if (error) {
+            // Strava returned an error
+            errorDiv.style.display = 'block';
+            errorDiv.textContent = 'Strava Error: ' + error + (errorDescription ? ' - ' + errorDescription : '');
+            document.querySelector('.spinner').style.display = 'none';
+            document.querySelector('.muted').style.display = 'none';
+        } else if (!code) {
+            // No code in URL
+            errorDiv.style.display = 'block';
+            errorDiv.textContent = 'No authorization code received from Strava.';
+            document.querySelector('.spinner').style.display = 'none';
+            document.querySelector('.muted').style.display = 'none';
+        } else {
+            // We have a code, redirect to the ESP32
+            successDiv.style.display = 'block';
+            successDiv.textContent = '✓ Code received, redirecting to your device...';
+            
+            // Build the redirect URL for the ESP32
+            // Use localhost as fallback, but primarily try ArbiBikeKM.local
+            const redirectUrl = 'http://ArbiBikeKM.local/callback?code=' + encodeURIComponent(code) + (state ? '&state=' + encodeURIComponent(state) : '');
+            
+            // Redirect after a short delay for visual feedback
+            setTimeout(function() {
+                window.location.href = redirectUrl;
+            }, 500);
+        }
+    </script>
+</body>
+</html>
