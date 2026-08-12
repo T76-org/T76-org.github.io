@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">Software and automation tour | Dr. PD</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://t76-org.github.io/drpd/docs/img/drpd-case-render.png"><meta data-rh="true" name="twitter:image" content="https://t76-org.github.io/drpd/docs/img/drpd-case-render.png"><meta data-rh="true" property="og:url" content="https://t76-org.github.io/drpd/docs/exploration-guide/software-and-automation"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Software and automation tour | Dr. PD"><meta data-rh="true" name="description" content="The browser app is the easiest place to begin. It lets you connect the"><meta data-rh="true" property="og:description" content="The browser app is the easiest place to begin. It lets you connect the"><link data-rh="true" rel="icon" href="/drpd/docs/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://t76-org.github.io/drpd/docs/exploration-guide/software-and-automation"><link data-rh="true" rel="alternate" href="https://t76-org.github.io/drpd/docs/exploration-guide/software-and-automation" hreflang="en"><link data-rh="true" rel="alternate" href="https://t76-org.github.io/drpd/docs/exploration-guide/software-and-automation" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Exploration guide","item":"https://t76-org.github.io/drpd/docs/category/exploration-guide"},{"@type":"ListItem","position":2,"name":"Software and automation tour","item":"https://t76-org.github.io/drpd/docs/exploration-guide/software-and-automation"}]}</script><link rel="stylesheet" href="/drpd/docs/assets/css/styles.b43da267.css">
-<script src="/drpd/docs/assets/js/runtime~main.870d0519.js" defer="defer"></script>
+<script src="/drpd/docs/assets/js/runtime~main.9a0368e7.js" defer="defer"></script>
 <script src="/drpd/docs/assets/js/main.c0d4d0eb.js" defer="defer"></script>
 </head>
 <body>
@@ -74,18 +74,20 @@ analog VBUS samples, and app-injected events.</li>
 visible table columns and capture buffer depth. Column widths and layout
 choices are remembered by the app.</li>
 <li class=""><strong>Capture → Filter...</strong> narrows the view by message properties, while
-the search field helps find text in decoded fields.</li>
+the filter dialog also provides a <strong>Hide GoodCRC Messages</strong> control.</li>
 <li class=""><strong>Capture → Hide GoodCRC Messages</strong> keeps acknowledgements out of the
 working view without changing the underlying capture.</li>
 <li class=""><strong>Capture → Add marker</strong> inserts a manual event row when the physical
 setup changes, such as swapping a cable or adding load.</li>
-<li class=""><strong>Capture → Export Selected → JSON...</strong> exports structured raw and
-decoded message data.</li>
-<li class=""><strong>Capture → Export Selected → CSV...</strong> exports a spreadsheet-friendly
-table.</li>
+<li class=""><strong>Capture → Export Selected → JSON...</strong> exports stored capture rows,
+including raw data and annotations, for later re-import and decoding.</li>
+<li class=""><strong>Capture → Export Selected → CSV...</strong> exports a fixed,
+spreadsheet-friendly summary table.</li>
 </ul>
-<p>JSON is useful when another tool needs raw fields, decoded fields, warnings, and
-errors. CSV is useful for compact tables and quick comparisons between runs.</p>
+<p>JSON is useful for reopening a capture in the app or processing stored raw
+records and annotations. It does not include the complete expanded Message
+Detail field tree. CSV is useful for compact summaries and quick comparisons
+between runs; its columns do not depend on the current Message Log layout.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sink-and-observer-paths">Sink and Observer paths<a href="#sink-and-observer-paths" class="hash-link" aria-label="Direct link to Sink and Observer paths" title="Direct link to Sink and Observer paths" translate="no">​</a></h2>
 <p>Sink mode makes Dr. PD the USB-PD sink. It is useful for exploring how a
 charger, laptop port, power bank, or cable responds to specific contracts. The

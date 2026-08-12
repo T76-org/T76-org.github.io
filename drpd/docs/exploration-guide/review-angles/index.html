@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">Choose an exploration path | Dr. PD</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://t76-org.github.io/drpd/docs/img/drpd-case-render.png"><meta data-rh="true" name="twitter:image" content="https://t76-org.github.io/drpd/docs/img/drpd-case-render.png"><meta data-rh="true" property="og:url" content="https://t76-org.github.io/drpd/docs/exploration-guide/review-angles"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Choose an exploration path | Dr. PD"><meta data-rh="true" name="description" content="Dr. PD can be approached from several directions. The paths below are not"><meta data-rh="true" property="og:description" content="Dr. PD can be approached from several directions. The paths below are not"><link data-rh="true" rel="icon" href="/drpd/docs/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://t76-org.github.io/drpd/docs/exploration-guide/review-angles"><link data-rh="true" rel="alternate" href="https://t76-org.github.io/drpd/docs/exploration-guide/review-angles" hreflang="en"><link data-rh="true" rel="alternate" href="https://t76-org.github.io/drpd/docs/exploration-guide/review-angles" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Exploration guide","item":"https://t76-org.github.io/drpd/docs/category/exploration-guide"},{"@type":"ListItem","position":2,"name":"Choose an exploration path","item":"https://t76-org.github.io/drpd/docs/exploration-guide/review-angles"}]}</script><link rel="stylesheet" href="/drpd/docs/assets/css/styles.b43da267.css">
-<script src="/drpd/docs/assets/js/runtime~main.870d0519.js" defer="defer"></script>
+<script src="/drpd/docs/assets/js/runtime~main.9a0368e7.js" defer="defer"></script>
 <script src="/drpd/docs/assets/js/main.c0d4d0eb.js" defer="defer"></script>
 </head>
 <body>
@@ -24,8 +24,9 @@ USB-PD behavior can fit into a development workflow.</p>
 <li class="">Capture and decode USB-PD messages while a device attaches, negotiates, and
 changes state. The <a class="" href="/drpd/docs/how-to/capturing-messages">message capture guide</a>
 explains the decoded fields, timing information, and export flow.</li>
-<li class="">Export selected captures as CSV or JSON, then inspect the decoded message
-fields outside the UI.</li>
+<li class="">Export selected captures as CSV for fixed summary columns, or as JSON for
+stored raw capture rows and annotations that can be imported and decoded
+again.</li>
 <li class="">Compare repeated attach or <strong>Mode → Cycle USB Connection</strong> runs to see
 whether the same source capabilities and contracts appear each time.</li>
 <li class="">Use Python, JavaScript, SCPI, or USBTMC for small repeatable checks, such as

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">Start exploring Dr. PD | Dr. PD</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://t76-org.github.io/drpd/docs/img/drpd-case-render.png"><meta data-rh="true" name="twitter:image" content="https://t76-org.github.io/drpd/docs/img/drpd-case-render.png"><meta data-rh="true" property="og:url" content="https://t76-org.github.io/drpd/docs/exploration-guide/overview"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Start exploring Dr. PD | Dr. PD"><meta data-rh="true" name="description" content="Dr. PD case render"><meta data-rh="true" property="og:description" content="Dr. PD case render"><link data-rh="true" rel="icon" href="/drpd/docs/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://t76-org.github.io/drpd/docs/exploration-guide/overview"><link data-rh="true" rel="alternate" href="https://t76-org.github.io/drpd/docs/exploration-guide/overview" hreflang="en"><link data-rh="true" rel="alternate" href="https://t76-org.github.io/drpd/docs/exploration-guide/overview" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Exploration guide","item":"https://t76-org.github.io/drpd/docs/category/exploration-guide"},{"@type":"ListItem","position":2,"name":"Start exploring Dr. PD","item":"https://t76-org.github.io/drpd/docs/exploration-guide/overview"}]}</script><link rel="stylesheet" href="/drpd/docs/assets/css/styles.b43da267.css">
-<script src="/drpd/docs/assets/js/runtime~main.870d0519.js" defer="defer"></script>
+<script src="/drpd/docs/assets/js/runtime~main.9a0368e7.js" defer="defer"></script>
 <script src="/drpd/docs/assets/js/main.c0d4d0eb.js" defer="defer"></script>
 </head>
 <body>
@@ -45,9 +45,9 @@ and cable advertise and what you explicitly enable.</p>
 in Chrome or Edge, and pair the device. If your browser offers it, you can
 <a class="" href="/drpd/docs/how-to/installing-as-app">install Dr. PD as an app</a> and launch the
 same control software in a standalone app window later.</li>
-<li class="">Connect the USB-PD source to Port 1.</li>
-<li class="">Select <strong>Mode → Sink</strong>.</li>
 <li class="">Select <strong>Capture → Enable Capture</strong>.</li>
+<li class="">Select <strong>Mode → Sink</strong>.</li>
+<li class="">Connect the USB-PD source to Port 1.</li>
 <li class="">Watch the Message Log populate with decoded USB-PD messages and correlated
 VBUS measurements.</li>
 <li class="">Open <strong>Mode → Choose power contract...</strong> if you want to compare another
@@ -56,6 +56,9 @@ contract that the source advertises.</li>
 <strong>Capture → Export Selected → JSON...</strong> if you want data for notes or
 external analysis.</li>
 </ol>
+<p>If the source was already connected when capture started, select <strong>Mode → Cycle
+USB Connection</strong> before reviewing the log so the attach and initial negotiation
+are captured.</p>
 <p>For an inline observation path, put Dr. PD in <strong>Mode → Observer</strong>, connect it
 between a source and sink with two USB-C cables, select <strong>Capture → Enable
 Capture</strong>, and then attach the second device to capture the negotiation.</p>
